@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Performance Dashboard Mockup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #1a1a1a;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --text-lighter: #999999;
+            --bg-light: #f5f5f5;
+            --bg-lighter: #fafafa;
+            --border-color: #e0e0e0;
+            --accent-dark: #4a5568;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .dashboard {
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .dashboard-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            margin-bottom: 0.4rem;
+        }
+
+        .dashboard-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* KPI Section */
+        .kpi-section {
+            margin-bottom: 2rem;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .kpi-card {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 1.2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .kpi-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.6rem;
+        }
+
+        .kpi-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            margin-bottom: 0.8rem;
+        }
+
+        .kpi-trend {
+            font-size: 0.75rem;
+            color: var(--text-lighter);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .kpi-trend-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-dark);
+            border-radius: 50%;
+        }
+
+        /* Chart Section */
+        .chart-section {
+            margin-bottom: 2rem;
+        }
+
+        .chart-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .chart-container {
+            background-color: var(--bg-lighter);
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: 200px;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Metrics Section */
+        .metrics-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .metric-card {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 1.2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.6rem;
+        }
+
+        .metric-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            margin-bottom: 0.4rem;
+        }
+
+        .metric-trend {
+            font-size: 0.7rem;
+            color: var(--text-lighter);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 16px;
+            }
+
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .metrics-section {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-container {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Title -->
+        <div>
+            <div class="dashboard-title">Content Performance</div>
+            <div class="dashboard-subtitle">Aggregated performance scores across portfolio</div>
+        </div>
+
+        <!-- KPI Section -->
+        <div class="kpi-section">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-label">Visibility Score</div>
+                    <div class="kpi-value">7.2</div>
+                    <div class="kpi-trend">
+                        <span class="kpi-trend-dot"></span>
+                        <span>vs. avg 6.8</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-label">Engagement Score</div>
+                    <div class="kpi-value">8.1</div>
+                    <div class="kpi-trend">
+                        <span class="kpi-trend-dot"></span>
+                        <span>vs. avg 7.5</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-label">Conversion Score</div>
+                    <div class="kpi-value">6.9</div>
+                    <div class="kpi-trend">
+                        <span class="kpi-trend-dot"></span>
+                        <span>vs. avg 6.4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="chart-section">
+            <div class="chart-title">Performance Trend (12 months)</div>
+            <div class="chart-container">
+                <svg viewBox="0 0 500 150" preserveAspectRatio="xMidYMid meet">
+                    <!-- Grid lines -->
+                    <line x1="30" y1="130" x2="480" y2="130" stroke="#e0e0e0" stroke-width="1"/>
+                    <line x1="30" y1="95" x2="480" y2="95" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="30" y1="60" x2="480" y2="60" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="30" y1="25" x2="480" y2="25" stroke="#e0e0e0" stroke-width="1"/>
+
+                    <!-- Line for Last Year (light grey) -->
+                    <polyline
+                        points="30,70 70,75 110,65 150,80 190,75 230,85 270,70 310,75 350,80 390,70 430,75 480,70"
+                        fill="none"
+                        stroke="#999999"
+                        stroke-width="2"
+                        opacity="0.5"
+                    />
+
+                    <!-- Line for This Year (dark grey) -->
+                    <polyline
+                        points="30,50 70,45 110,40 150,55 190,45 230,60 270,50 310,45 350,55 390,40 430,50 480,35"
+                        fill="none"
+                        stroke="#4a5568"
+                        stroke-width="2.5"
+                    />
+
+                    <!-- Legend -->
+                    <line x1="30" y1="145" x2="45" y2="145" stroke="#999999" stroke-width="2" opacity="0.5"/>
+                    <text x="50" y="150" font-family="Inter" font-size="11" fill="#666666">Last year</text>
+
+                    <line x1="160" y1="145" x2="175" y2="145" stroke="#4a5568" stroke-width="2.5"/>
+                    <text x="180" y="150" font-family="Inter" font-size="11" fill="#1a1a1a" font-weight="600">This year</text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Metrics Section -->
+        <div class="metrics-section">
+            <div class="metric-card">
+                <div class="metric-label">Total Articles</div>
+                <div class="metric-value">1,247</div>
+                <div class="metric-trend">Tracked across portfolio</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-label">Avg. Engagement</div>
+                <div class="metric-value">4.2K</div>
+                <div class="metric-trend">Per article / 12M</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-label">Top Performer</div>
+                <div class="metric-value">9.8</div>
+                <div class="metric-trend">Percentile rank</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-label">Underperforming</div>
+                <div class="metric-value">14%</div>
+                <div class="metric-trend">Below 25th percentile</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

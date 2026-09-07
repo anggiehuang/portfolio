@@ -158,14 +158,14 @@
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            margin-bottom: 1.2rem !important;
+            margin-bottom: 0.8rem;
         }
 
         .summary-cards-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
-            margin-top: 4cm !important;
+            margin-top: 2cm;
         }
 
         .summary-card {
@@ -242,7 +242,7 @@
             font-size: 4rem;
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 2.3rem !important;
+            margin-bottom: 2rem;
             color: var(--charcoal);
         }
 
@@ -485,14 +485,14 @@
                     </p>
                     <div class="hero-buttons">
                         <a href="#work" class="btn btn-primary">→ See my work</a>
-                        <a href="https://raw.githubusercontent.com/anggiehuang/portfolio/main/Anggie_Huang_Data_Analyst_CV.pdf" class="btn btn-secondary" download>
+                        <button class="btn btn-secondary">
                             <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
                             </svg>
                             Download CV
-                        </a>
+                        </button>
                     </div>
 
                     <!-- Contact Info -->
@@ -780,11 +780,6 @@
                             </ul>
                         </div>
                     </div>
-
-                    <div class="project-image cro-images">
-                        <img src="cro-analysis-slide1.png" alt="CRO Analysis Slide 1">
-                        <img src="cro-analysis-slide2.png" alt="CRO Analysis Slide 2">
-                    </div>
                 </div>
             </div>
         </div>
@@ -885,7 +880,7 @@
             </div>
 
             <!-- Education Tab -->
-            <div class="tab-content" id="education-tab">
+            <div class="tab-content" id="education">
                 <!-- Education 1: MSc Marketing -->
                 <div class="education-item">
                     <div class="education-header-content">
@@ -1296,32 +1291,6 @@
         .project-image.wide-preview img:last-child {
             max-width: 117.6%;
             max-height: 210px;
-        }
-
-        /* CRO Images - Smaller version on the right */
-        .project-image.cro-images {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-            background-color: transparent;
-            border: 1px solid var(--sage-mist);
-            border-radius: 8px;
-            min-height: auto;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 0.8rem;
-            transform: translateX(1cm);
-        }
-
-        .project-image.cro-images img {
-            height: auto;
-            background-color: transparent;
-            border: none;
-            border-radius: 4px;
-            padding: 0;
-            object-fit: contain;
-            width: 265px;
-            margin-bottom: 0.5rem;
         }
 
         /* Responsive */

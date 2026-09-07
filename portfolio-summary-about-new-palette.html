@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Summary & About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --warm-white: #FAFAF8;
+            --charcoal: #252525;
+            --sage-mist: #EEF1EC;
+            --muted-sage: #9CAF9B;
+            --deep-sage: #718675;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--warm-white);
+        }
+
+        /* Hero Section / Summary */
+        .hero {
+            padding: 6rem 2rem;
+            background-color: var(--warm-white);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-top {
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            color: var(--deep-sage);
+            margin-bottom: 2rem;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: var(--sage-mist);
+            color: var(--deep-sage);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .hero-left h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+        }
+
+        .hero-description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--deep-sage);
+            color: var(--warm-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--muted-sage);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--warm-white);
+            color: var(--charcoal);
+            border: 1px solid var(--muted-sage);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--sage-mist);
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .what-i-do-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin: 0;
+        }
+
+        /* Summary Cards Grid - 2x2 */
+        .summary-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .summary-card {
+            background-color: var(--warm-white);
+            border-left: 4px solid;
+            padding: 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            min-height: 130px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid var(--sage-mist);
+        }
+
+        .summary-card:hover {
+            box-shadow: 0 6px 16px rgba(113, 134, 117, 0.12);
+            transform: translateY(-3px);
+        }
+
+        .summary-card-01 {
+            border-left-color: var(--deep-sage);
+        }
+
+        .summary-card-02 {
+            border-left-color: var(--muted-sage);
+        }
+
+        .summary-card-03 {
+            border-left-color: var(--muted-sage);
+            opacity: 0.85;
+        }
+
+        .summary-card-04 {
+            border-left-color: var(--sage-mist);
+            opacity: 0.85;
+        }
+
+        .summary-card h4 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .summary-card-number-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 0.5rem;
+        }
+
+        .summary-card-number {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--muted-sage);
+            opacity: 0.5;
+            line-height: 1;
+        }
+
+        /* About Me Section */
+        .about {
+            padding: 6rem 2rem;
+            background-color: var(--sage-mist);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            margin-bottom: 3rem;
+        }
+
+        .about-label {
+            font-size: 0.75rem;
+            color: var(--deep-sage);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .about-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+
+        .technical-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .skill-badge {
+            background-color: var(--warm-white);
+            color: var(--charcoal);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--muted-sage);
+        }
+
+        .about-right {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .achievement-card {
+            background-color: var(--warm-white);
+            border-left: 3px solid var(--deep-sage);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            box-shadow: 0 4px 12px rgba(113, 134, 117, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .achievement-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .achievement-title {
+            font-family: 'Fraunces', serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 0.4rem;
+        }
+
+        .achievement-description {
+            font-size: 0.8rem;
+            color: var(--charcoal);
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 2rem;
+            }
+
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .summary-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .about {
+                padding: 4rem 2rem;
+            }
+
+            .about-title {
+                font-size: 1.8rem;
+            }
+
+            .about-right {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section / Summary -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-top">
+                <p class="hero-subtitle">Looking for opportunities in the data world!</p>
+                <span class="hero-tag">DATA STORYTELLER & INSIGHTS ANALYST</span>
+            </div>
+
+            <div class="hero-main">
+                <div class="hero-left">
+                    <h1>Anggie Huang</h1>
+                    <p class="hero-description">
+                        4+ years of experience designing data products and delivering analytics solutions that enable confident decision-making. Experienced across consultancy and in-house environments, working with insurance, professional services, B2B SaaS, and e-commerce clients.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">→ See my work</button>
+                        <button class="btn btn-secondary">⬇ Download CV</button>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="what-i-do-header">
+                        <h3>What I do?</h3>
+                    </div>
+
+                    <div class="summary-cards-grid">
+                        <div class="summary-card summary-card-01">
+                            <h4>Analytics & Insights</h4>
+                            <div class="summary-card-number-container">
+                                <span class="summary-card-number">01</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-card summary-card-02">
+                            <h4>Measurement & Experimentation</h4>
+                            <div class="summary-card-number-container">
+                                <span class="summary-card-number">02</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-card summary-card-03">
+                            <h4>Requirements-Driven Solutions</h4>
+                            <div class="summary-card-number-container">
+                                <span class="summary-card-number">03</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-card summary-card-04">
+                            <h4>Data Governance & Frameworks</h4>
+                            <div class="summary-card-number-container">
+                                <span class="summary-card-number">04</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-header">
+                <p class="about-label">About Me</p>
+                <h2 class="about-title">Who I am</h2>
+            </div>
+
+            <div class="about-main">
+                <div class="about-left">
+                    <p class="about-text">
+                        I'm a data analyst passionate about translating business problems into scalable data solutions. I specialise in designing user-centric analytics solutions that guide stakeholders across the full data lifecycle—from defining measurement frameworks and establishing data governance standards to delivering impactful visualisations and insights. I thrive on complex business challenges where the answer isn't obvious, insight loops are tight, and commercial stakes are high.
+                    </p>
+
+                    <div>
+                        <p style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.8rem; color: var(--deep-sage);">Technical Skills</p>
+                        <div class="technical-skills">
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">BigQuery</span>
+                            <span class="skill-badge">GA4</span>
+                            <span class="skill-badge">Looker Studio</span>
+                            <span class="skill-badge">Power BI</span>
+                            <span class="skill-badge">A/B Testing</span>
+                            <span class="skill-badge">Statistical Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-right">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">📊</div>
+                        <div class="achievement-title">Data Governance & Frameworks</div>
+                        <div class="achievement-description">Establish standardised data structures and measurement frameworks that create a single source of truth across the organisation.</div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">📈</div>
+                        <div class="achievement-title">Analytics & Insights</div>
+                        <div class="achievement-description">Discover opportunities through deep analysis, providing tailored insights that drive strategic and operational decisions.</div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">⚗️</div>
+                        <div class="achievement-title">Measurement & Experimentation</div>
+                        <div class="achievement-description">Design measurement strategies and predictive models that inform optimization decisions through A/B testing and statistical analysis.</div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🎯</div>
+                        <div class="achievement-title">Requirements-Driven Solutions</div>
+                        <div class="achievement-description">Partner with stakeholders to understand their needs, then design and deliver tailored analytics solutions that enable independent action.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

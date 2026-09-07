@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anggie Huang - Data Analyst & Insights Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #1a1a1a;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f5f5f5;
+            --border-color: #e0e0e0;
+            --accent-dark: #4a5568;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+        }
+
+        .nav-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-dark);
+        }
+
+        .theme-toggle, .contact-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .contact-btn {
+            background-color: var(--primary-black);
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--accent-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem;
+            background-color: #ffffff;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-top {
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(74, 85, 104, 0.1);
+            color: var(--accent-dark);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .hero-left h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--primary-black);
+        }
+
+        .hero-description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-black);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-light);
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .looking-for-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .looking-for-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .looking-for-header h3 {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .looking-for-header p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            margin: 0;
+        }
+
+        .looking-for-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .looking-for-item {
+            padding: 1.2rem;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .looking-for-item:hover {
+            background-color: #f0f0f0;
+            border-color: var(--accent-dark);
+        }
+
+        .looking-for-item h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .looking-for-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background-color: #ffffff;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            align-items: start;
+        }
+
+        .about-left {
+            max-width: 500px;
+        }
+
+        .about-left p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .technical-skills {
+            margin-top: 2rem;
+        }
+
+        .technical-skills h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-badge {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        .achievement-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .achievement-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(26, 26, 26, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .achievement-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-card p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .achievement-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .achievement-skill-tag {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 6rem 2rem;
+            background-color: var(--bg-light);
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--primary-black);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .project-header {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0;
+            flex: 1;
+        }
+
+        .project-tag {
+            background-color: var(--bg-light);
+            color: var(--text-light);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-impact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .impact-item {
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .impact-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .impact-value {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 6rem 2rem;
+            background-color: #ffffff;
+        }
+
+        .experience-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .experience-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--primary-black);
+        }
+
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .experience-item {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-black);
+        }
+
+        .experience-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-company {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .experience-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .experience-highlights {
+            list-style: none;
+        }
+
+        .experience-highlights li {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.7rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .experience-highlights li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-dark);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            text-align: center;
+            background-color: var(--bg-light);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary-black);
+        }
+
+        .contact-intro {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-black);
+            color: #ffffff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-black);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-top {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .achievement-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .achievement-cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-link {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-wrapper">
+            <div class="logo">Anggie H.</div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#work" class="nav-link">Work</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><button class="theme-toggle">☀️</button></li>
+                <li><a href="#contact" class="contact-btn">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-top">
+                <p class="hero-subtitle">Looking for opportunities in the data world!</p>
+                <span class="hero-tag">DATA STORYTELLER & INSIGHTS ANALYST</span>
+            </div>
+
+            <div class="hero-main">
+                <div class="hero-left">
+                    <h1>Anggie Huang</h1>
+                    <p class="hero-description">
+                        4+ years of experience designing and delivering data products that enable confident decision-making across complex organisations. Skilled in the full data lifecycle — from defining measurement frameworks and establishing data governance standards through to building dashboards and translating insights for C-suite, marketing teams, and operational stakeholders. Experienced in both consultancy and in-house environments. Recent role at a digital marketing consultancy, delivering analytics solutions across insurance, professional services, B2B SaaS, and e-commerce.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">→ See my work</button>
+                        <button class="btn btn-secondary">⬇ Download CV</button>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="looking-for-card">
+                        <div class="looking-for-header">
+                            <h3>I'M LOOKING FOR</h3>
+                            <p>Data Analyst Role</p>
+                        </div>
+                        <div class="looking-for-items">
+                            <div class="looking-for-item">
+                                <h4>Measurement Frameworks & Data Governance</h4>
+                                <p>Establish data standards and measurement frameworks that enable teams to work independently</p>
+                            </div>
+                            <div class="looking-for-item">
+                                <h4>Analytics & Insights</h4>
+                                <p>Discover opportunities through deep analysis, providing actionable insights for decision-makers</p>
+                            </div>
+                            <div class="looking-for-item">
+                                <h4>Experimentation & Optimisation</h4>
+                                <p>Drive optimization decisions using statistical methods and A/B testing</p>
+                            </div>
+                            <div class="looking-for-item">
+                                <h4>Dashboard Design & Self-serve Analytics</h4>
+                                <p>Design intuitive dashboards and frameworks that empower non-technical users to take action independently</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <p class="section-title">About Me</p>
+
+            <div class="about-top">
+                <div class="about-left">
+                    <p>
+                        I'm a data analyst passionate about translating business problems into scalable data solutions. My expertise spans the full data lifecycle—from designing measurement frameworks and establishing data governance standards to delivering impactful visualisations and insights used by stakeholders across complex international organisations. I specialise in designing user-centric analytics solutions, collaborating with cross-functional teams, and delivering insights under tight deadlines.
+                    </p>
+                    <div class="technical-skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">BigQuery</span>
+                            <span class="skill-badge">GA4</span>
+                            <span class="skill-badge">Looker Studio</span>
+                            <span class="skill-badge">Power BI</span>
+                            <span class="skill-badge">A/B Testing</span>
+                            <span class="skill-badge">Statistical Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievement-cards-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">📊</div>
+                        <h3>Data Governance & Frameworks</h3>
+                        <p>Establish data standards and measurement frameworks that enable teams to work independently across the organisation.</p>
+                        <div class="achievement-skills">
+                            <span class="achievement-skill-tag">Data Standards Definition</span>
+                            <span class="achievement-skill-tag">GA4 & GTM Configuration</span>
+                            <span class="achievement-skill-tag">Training & Enablement</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">📈</div>
+                        <h3>Performance Analytics & Insights</h3>
+                        <p>Discover opportunities through deep analysis, providing actionable insights for C-suite and operational stakeholders.</p>
+                        <div class="achievement-skills">
+                            <span class="achievement-skill-tag">User Behaviour Analysis</span>
+                            <span class="achievement-skill-tag">Digital Performance Diagnosis</span>
+                            <span class="achievement-skill-tag">Strategic Insight Delivery</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">⚗️</div>
+                        <h3>Measurement & Experimentation</h3>
+                        <p>Drive optimization decisions using statistical methods and A/B testing to validate hypotheses and prioritise improvements.</p>
+                        <div class="achievement-skills">
+                            <span class="achievement-skill-tag">Content Performance Frameworks</span>
+                            <span class="achievement-skill-tag">A/B Testing & CRO</span>
+                            <span class="achievement-skill-tag">Statistical Modelling</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">📱</div>
+                        <h3>Analytics Solutions Design</h3>
+                        <p>Design intuitive dashboards and frameworks that empower non-technical users to take action independently.</p>
+                        <div class="achievement-skills">
+                            <span class="achievement-skill-tag">Dashboard Architecture</span>
+                            <span class="achievement-skill-tag">Self-serve Analytics</span>
+                            <span class="achievement-skill-tag">Anomaly Detection Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="work">
+        <div class="projects-container">
+            <h2 class="projects-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Anomaly Detection System</h3>
+                        <span class="project-tag">BigQuery · SQL · Statistics</span>
+                    </div>
+                    <p class="project-description">Built an automated real-time anomaly detection system in BigQuery using SQL and statistical confidence intervals to flag bot traffic and data anomalies across international markets.</p>
+                    <div class="project-impact">
+                        <div class="impact-item">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">Eliminated manual QA checks across all markets</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-label">Result:</span>
+                            <span class="impact-value">Protected data integrity upstream of reporting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Content Performance Framework</h3>
+                        <span class="project-tag">GA4 · SemRush · GSC · Looker Studio</span>
+                    </div>
+                    <p class="project-description">Designed a scalable measurement framework consolidating 6 data sources into a single benchmarked score across 1,000+ assets.</p>
+                    <div class="project-impact">
+                        <div class="impact-item">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">Enabled self-serve analytics for non-technical teams</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-label">Result:</span>
+                            <span class="impact-value">Reduced analyst dependency and accelerated decision-making</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>C-Suite Performance Reporting</h3>
+                        <span class="project-tag">BigQuery · Google Sheets · Automation</span>
+                    </div>
+                    <p class="project-description">Owned design and delivery of an automated marketing performance reporting suite for a global professional services client.</p>
+                    <div class="project-impact">
+                        <div class="impact-item">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">Delivered channel efficiency insights to C-suite</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-label">Result:</span>
+                            <span class="impact-value">Informed global budget allocation decisions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>SEO Forecasting Model</h3>
+                        <span class="project-tag">Excel · Regression Analysis · Statistical Modelling</span>
+                    </div>
+                    <p class="project-description">Built a regression-based forecasting model using historical GSC data with multivariate scenario modelling and external variable controls.</p>
+                    <div class="project-impact">
+                        <div class="impact-item">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">95% confidence projections enabled confident investment decisions</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-label">Result:</span>
+                            <span class="impact-value">Supported internal new business pitches with data-backed growth scenarios</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>GA4 Configuration & Data Governance</h3>
+                        <span class="project-tag">GA4 · GTM · Data Standards</span>
+                    </div>
+                    <p class="project-description">Owned GA4 property configuration and GTM implementation across 50+ global web properties with standardised data governance.</p>
+                    <div class="project-impact">
+                        <div class="impact-item">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">Standardised data structures across the organisation</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-label">Result:</span>
+                            <span class="impact-value">Embedded data-driven thinking and reduced analytics dependency</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>CRO & Digital Experimentation Analysis</h3>
+                        <span class="project-tag">GA4 · Behavioural Analytics · Optimizely</span>
+                    </div>
+                    <p class="project-description">Led CRO analysis for an e-commerce client, diagnosing engagement and drop-off patterns across device type and user cohort.</p>
+                    <div class="project-impact">
+                        <div class="impact-item">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">Discovered non-obvious optimization opportunities</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-label">Result:</span>
+                            <span class="impact-value">Shaped landing page strategy and delivered conversion improvements</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="experience-container">
+            <h2 class="experience-title">Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Data Storyteller & Insights Analyst</h3>
+                    </div>
+                    <p class="experience-company">Clarity Global, London</p>
+                    <p class="experience-date">Mar 2025 – Present</p>
+                    <p class="experience-description">Client-facing analytics consultancy delivering data products and insights across professional services, insurance, B2B SaaS, e-commerce, and FMCG sectors.</p>
+                    <ul class="experience-highlights">
+                        <li>Designed automated anomaly detection system in BigQuery protecting data integrity across international markets</li>
+                        <li>Owned performance reporting suite for global professional services client, delivering C-suite insights on channel efficiency</li>
+                        <li>Built scalable content performance framework consolidating 6 data sources into single benchmarked score across 1,000+ assets</li>
+                        <li>Created regression-based SEO forecasting model delivering 95% confidence projections for investment decisions</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Junior Digital Marketing Analyst</h3>
+                    </div>
+                    <p class="experience-company">Howden, London</p>
+                    <p class="experience-date">Oct 2022 – Jan 2025</p>
+                    <p class="experience-description">In-house analytics resource at group level, serving international stakeholders across a global insurance broker. Focus on digital performance analysis, experimentation, and data governance.</p>
+                    <ul class="experience-highlights">
+                        <li>Analysed user behaviour and digital performance using GA4 and FullStory, delivering 10+ structured insight reports to senior leadership</li>
+                        <li>Owned end-to-end A/B and multivariate experimentation lifecycle across global websites using Optimizely</li>
+                        <li>Established group-wide UTM taxonomy and data governance framework, trained 50+ stakeholders across 10+ sessions</li>
+                        <li>Owned GA4 property configuration and GTM implementation across 50+ global web properties, ensuring data consistency and integrity</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Integrated Marketing Communications Assistant</h3>
+                    </div>
+                    <p class="experience-company">Zenith Media, Taipei</p>
+                    <p class="experience-date">Apr 2021 – Sep 2021</p>
+                    <p class="experience-description">Agency-side experience supporting paid media strategy and campaign performance analysis for FMCG (Nestlé) and entertainment clients.</p>
+                    <ul class="experience-highlights">
+                        <li>Reviewed and optimised paid media performance for FMCG brands on weekly cycle based on data-driven insights</li>
+                        <li>Conducted market research and demographic analysis to develop a localisation retargeting strategy for an international entertainment client</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="contact-title">Get in Touch</h2>
+            <p class="contact-intro">I'm always interested in discussing data-driven insights, analytics challenges, or opportunities to collaborate. Feel free to reach out!</p>
+            <div class="contact-links">
+                <a href="mailto:anggietw@gmail.com" class="contact-link">📧 Email</a>
+                <a href="https://www.linkedin.com/in/chienjui-huang/" target="_blank" class="contact-link">💼 LinkedIn</a>
+                <a href="tel:+447518763007" class="contact-link">📱 Phone</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Anggie Huang. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active nav link
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

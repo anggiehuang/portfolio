@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRO Analysis - Slide 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #1a1a1a;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --text-lighter: #999999;
+            --bg-light: #f5f5f5;
+            --bg-lighter: #fafafa;
+            --border-color: #e0e0e0;
+            --accent-dark: #4a5568;
+            --high: #4caf50;
+            --medium: #ff9800;
+            --low: #2196f3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .slide {
+            max-width: 800px;
+            aspect-ratio: 16 / 9;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .slide-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .slide-section-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-black);
+        }
+
+        .table-container {
+            flex: 1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        thead {
+            background-color: var(--bg-light);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        th {
+            text-align: left;
+            padding: 0.6rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        td {
+            padding: 0.6rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        tbody tr:hover {
+            background-color: var(--bg-lighter);
+        }
+
+        .recommendation {
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .effort-high,
+        .impact-high {
+            color: var(--high);
+            font-weight: 600;
+        }
+
+        .effort-medium,
+        .impact-medium {
+            color: var(--medium);
+            font-weight: 600;
+        }
+
+        .effort-low,
+        .impact-low {
+            color: var(--low);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 30px;
+                gap: 1rem;
+            }
+
+            .slide-title {
+                font-size: 1.5rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="slide-header">
+            <p class="slide-section-label">Next Steps</p>
+            <h1 class="slide-title">Prioritised Recommendations</h1>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Recommendation</th>
+                        <th>Effort</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="recommendation">Optimize landing page content structure for priority segments</td>
+                        <td class="effort-medium">Medium</td>
+                        <td class="impact-high">High</td>
+                    </tr>
+                    <tr>
+                        <td class="recommendation">Audit and improve internal linking strategy across site</td>
+                        <td class="effort-medium">Medium</td>
+                        <td class="impact-high">High</td>
+                    </tr>
+                    <tr>
+                        <td class="recommendation">Implement additional engagement tracking on key pages</td>
+                        <td class="effort-high">High</td>
+                        <td class="impact-high">High</td>
+                    </tr>
+                    <tr>
+                        <td class="recommendation">Test CTA placement and messaging on underperforming pages</td>
+                        <td class="effort-high">High</td>
+                        <td class="impact-medium">Medium</td>
+                    </tr>
+                    <tr>
+                        <td class="recommendation">Establish performance monitoring dashboard for regional sites</td>
+                        <td class="effort-low">Low</td>
+                        <td class="impact-medium">Medium</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

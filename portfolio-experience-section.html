@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --warm-white: #FAFAF8;
+            --charcoal: #252525;
+            --sage-mist: #EEF1EC;
+            --muted-sage: #9CAF9B;
+            --deep-sage: #718675;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--warm-white);
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 4rem 2rem;
+            background-color: var(--warm-white);
+        }
+
+        .experience-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .experience-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .experience-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Tab Buttons */
+        .tab-buttons {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab-button {
+            padding: 0.5rem 1.2rem;
+            border: 1px solid var(--muted-sage);
+            background-color: var(--warm-white);
+            color: var(--charcoal);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            border-color: var(--deep-sage);
+            color: var(--deep-sage);
+        }
+
+        .tab-button.active {
+            background-color: var(--deep-sage);
+            color: var(--warm-white);
+            border-color: var(--deep-sage);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Experience Item */
+        .experience-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--sage-mist);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .experience-header-content {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-timeline {
+            flex-shrink: 0;
+            color: var(--muted-sage);
+            font-size: 0.85rem;
+            font-weight: 500;
+            min-width: 120px;
+        }
+
+        .experience-main {
+            flex: 1;
+        }
+
+        .job-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 0.2rem;
+        }
+
+        .company-location {
+            font-size: 0.85rem;
+            color: var(--muted-sage);
+            margin-bottom: 1rem;
+        }
+
+        .job-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--charcoal);
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        /* Show More Button */
+        .show-more-btn {
+            padding: 0.4rem 0.8rem;
+            background-color: var(--sage-mist);
+            border: none;
+            color: var(--deep-sage);
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .show-more-btn:hover {
+            background-color: var(--muted-sage);
+            color: var(--warm-white);
+        }
+
+        .show-more-btn svg {
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+        }
+
+        .show-more-btn svg path {
+            fill: currentColor;
+        }
+
+        .show-more-btn.open svg {
+            transform: rotate(180deg);
+        }
+
+        /* Bullets (Hidden by default) */
+        .experience-bullets {
+            display: none;
+            margin-top: 0.8rem;
+        }
+
+        .experience-bullets.show {
+            display: block;
+        }
+
+        .experience-bullets ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .experience-bullets li {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--charcoal);
+            opacity: 0.9;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .experience-bullets li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--muted-sage);
+            font-weight: 600;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 1px solid var(--sage-mist);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-header-content {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .education-timeline {
+            flex-shrink: 0;
+            color: var(--muted-sage);
+            font-size: 0.85rem;
+            font-weight: 500;
+            min-width: 120px;
+        }
+
+        .education-main {
+            flex: 1;
+        }
+
+        .degree-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 0.2rem;
+        }
+
+        .school-location {
+            font-size: 0.85rem;
+            color: var(--muted-sage);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .experience {
+                padding: 3rem 2rem;
+            }
+
+            .experience-title {
+                font-size: 1.8rem;
+            }
+
+            .experience-header-content,
+            .education-header-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .experience-timeline,
+            .education-timeline {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Experience Section -->
+    <section class="experience">
+        <div class="experience-container">
+            <div class="experience-header">
+                <h2 class="experience-title">Experience</h2>
+
+                <!-- Tab Buttons -->
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="work">Work</button>
+                    <button class="tab-button" data-tab="education">Education</button>
+                </div>
+            </div>
+
+            <!-- Work Tab -->
+            <div class="tab-content active" id="work">
+                <!-- Experience 1: Data Storyteller & Insights Analyst -->
+                <div class="experience-item">
+                    <div class="experience-header-content">
+                        <div class="experience-timeline">Mar 2025 – Jul 2026</div>
+                        <div class="experience-main">
+                            <h3 class="job-title">Data Storyteller & Insights Analyst</h3>
+                            <p class="company-location">Clarity Global · London, UK</p>
+                            <p class="job-description">
+                                Working within an AI-focused digital marketing consultancy, I deliver end-to-end analytics across a portfolio of international clients spanning insurance, professional services, e-commerce, and B2B SaaS — from stakeholder discovery and measurement framework design through to statistical analysis, dashboard delivery, and C-suite reporting.
+                            </p>
+                            <button class="show-more-btn" onclick="toggleBullets(this)">View more<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90"><path d="M 90 24.25 c 0 -0.896 -0.342 -1.792 -1.025 -2.475 c -1.366 -1.367 -3.583 -1.367 -4.949 0 L 45 60.8 L 5.975 21.775 c -1.367 -1.367 -3.583 -1.367 -4.95 0 c -1.366 1.367 -1.366 3.583 0 4.95 l 41.5 41.5 c 1.366 1.367 3.583 1.367 4.949 0 l 41.5 -41.5 C 89.658 26.042 90 25.146 90 24.25 z"></path></svg></button>
+                            <div class="experience-bullets">
+                                <ul>
+                                    <li>Designed scalable measurement frameworks consolidating multi-source data into single benchmarked scores, enabling non-technical stakeholders to independently track performance across 1,000+ content assets</li>
+                                    <li>Built regression-based SEO forecasting model with 95% confidence intervals and external variable controls, delivering data-backed growth projections to inform new business pitches</li>
+                                    <li>Designed and built automated anomaly detection system in BigQuery using statistical thresholds, flagging data integrity issues in real-time and eliminating manual QA bottlenecks</li>
+                                    <li>Facilitated discovery workshops with global insurance and professional services clients to define reporting requirements and KPIs, delivering self-serve Looker Studio dashboards</li>
+                                    <li>Led CRO and digital experimentation analysis for e-commerce clients, diagnosing engagement drop-off patterns and translating findings into prioritised optimisation recommendations</li>
+                                    <li>Scoped AI-powered analytics assistant for non-technical users, owning usability testing and requirements definition to enable independent data querying without SQL</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2: Junior Digital Marketing Analyst -->
+                <div class="experience-item">
+                    <div class="experience-header-content">
+                        <div class="experience-timeline">Oct 2022 – Jan 2025</div>
+                        <div class="experience-main">
+                            <h3 class="job-title">Junior Digital Marketing Analyst</h3>
+                            <p class="company-location">Howden · London, UK</p>
+                            <p class="job-description">
+                                Embedded within the Digital Customer Experience team at a global insurance broker, I served as the central analytics resource across international markets — owning web analytics, experimentation, data governance, and stakeholder enablement across 50+ global web properties.
+                            </p>
+                            <button class="show-more-btn" onclick="toggleBullets(this)">View more<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90"><path d="M 90 24.25 c 0 -0.896 -0.342 -1.792 -1.025 -2.475 c -1.366 -1.367 -3.583 -1.367 -4.949 0 L 45 60.8 L 5.975 21.775 c -1.367 -1.367 -3.583 -1.367 -4.95 0 c -1.366 1.367 -1.366 3.583 0 4.95 l 41.5 41.5 c 1.366 1.367 3.583 1.367 4.949 0 l 41.5 -41.5 C 89.658 26.042 90 25.146 90 24.25 z"></path></svg></button>
+                            <div class="experience-bullets">
+                                <ul>
+                                    <li>Owned GA4 property configuration and GTM implementation across 50+ global web properties — defined data taxonomies, UTM standards, and QA processes ensuring data consistency and integrity</li>
+                                    <li>Owned end-to-end A/B and multivariate experimentation lifecycle using Optimizely — defined hypotheses, set KPIs, ensured statistical validity, and translated results into evidence-based recommendations that shaped site optimisation</li>
+                                    <li>Analysed user behaviour and digital performance using GA4 and FullStory data — delivered 10+ structured insight reports identifying key performance drivers, acquisition patterns, and funnel drop-off points</li>
+                                    <li>Established group-wide UTM taxonomy and data governance framework — hosted 10+ training sessions for 50+ international stakeholders on self-serve analytics, embedding data-driven thinking across the organisation</li>
+                                    <li>Supported internal paid media execution and optimisation — modelled conversion outcomes and identified performance drivers to guide budget allocation and improve paid channel efficiency</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3: Integrated Marketing Communications Assistant -->
+                <div class="experience-item">
+                    <div class="experience-header-content">
+                        <div class="experience-timeline">Apr 2021 – Sep 2021</div>
+                        <div class="experience-main">
+                            <h3 class="job-title">Integrated Marketing Communications Assistant</h3>
+                            <p class="company-location">Zenith Media · Taipei, Taiwan</p>
+                            <p class="job-description">
+                                Supported integrated marketing campaigns within a global media agency, working across entertainment (Disney), food & beverage (King Car), and FMCG (Nestlé) clients.
+                            </p>
+                            <button class="show-more-btn" onclick="toggleBullets(this)">View more<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90"><path d="M 90 24.25 c 0 -0.896 -0.342 -1.792 -1.025 -2.475 c -1.366 -1.367 -3.583 -1.367 -4.949 0 L 45 60.8 L 5.975 21.775 c -1.367 -1.367 -3.583 -1.367 -4.95 0 c -1.366 1.367 -1.366 3.583 0 4.95 l 41.5 41.5 c 1.366 1.367 3.583 1.367 4.949 0 l 41.5 -41.5 C 89.658 26.042 90 25.146 90 24.25 z"></path></svg></button>
+                            <div class="experience-bullets">
+                                <ul>
+                                    <li>Supported paid media strategy and campaign performance analysis for FMCG brands including Nestlé — reviewed weekly campaign performance data, adjusted strategy based on performance insights, and experienced direct revenue visibility through GA tracking</li>
+                                    <li>Conducted market research and demographic analysis to develop localisation retargeting strategy for international entertainment client — contributed to 3.5M YouTube views and 1.7M Facebook views on a movie trailer launch campaign</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Tab -->
+            <div class="tab-content" id="education">
+                <!-- Education 1: MSc Marketing -->
+                <div class="education-item">
+                    <div class="education-header-content">
+                        <div class="education-timeline">Sep 2021 – Sep 2022</div>
+                        <div class="education-main">
+                            <h3 class="degree-title">MSc Marketing (Distinction)</h3>
+                            <p class="school-location">Alliance Manchester Business School · Manchester, UK</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education 2: Exchange Programme -->
+                <div class="education-item">
+                    <div class="education-header-content">
+                        <div class="education-timeline">Feb 2017 – Jul 2017</div>
+                        <div class="education-main">
+                            <h3 class="degree-title">Exchange Programme, Economics</h3>
+                            <p class="school-location">Tsinghua University · Beijing, China</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education 3: BSc Economics -->
+                <div class="education-item">
+                    <div class="education-header-content">
+                        <div class="education-timeline">Sep 2016 – Jun 2020</div>
+                        <div class="education-main">
+                            <h3 class="degree-title">BSc Economics (First-Class Honours)</h3>
+                            <p class="school-location">National Tsing Hua University · Hsinchu, Taiwan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                this.classList.add('active');
+                document.getElementById(tabName).classList.add('active');
+            });
+        });
+
+        // Toggle bullets
+        function toggleBullets(button) {
+            const bullets = button.nextElementSibling;
+            bullets.classList.toggle('show');
+            button.classList.toggle('open');
+            
+            // Change button text
+            if (bullets.classList.contains('show')) {
+                button.innerHTML = 'View less<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90"><path d="M 90 24.25 c 0 -0.896 -0.342 -1.792 -1.025 -2.475 c -1.366 -1.367 -3.583 -1.367 -4.949 0 L 45 60.8 L 5.975 21.775 c -1.367 -1.367 -3.583 -1.367 -4.95 0 c -1.366 1.367 -1.366 3.583 0 4.95 l 41.5 41.5 c 1.366 1.367 3.583 1.367 4.949 0 l 41.5 -41.5 C 89.658 26.042 90 25.146 90 24.25 z"></path></svg>';
+            } else {
+                button.innerHTML = 'View more<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90"><path d="M 90 24.25 c 0 -0.896 -0.342 -1.792 -1.025 -2.475 c -1.366 -1.367 -3.583 -1.367 -4.949 0 L 45 60.8 L 5.975 21.775 c -1.367 -1.367 -3.583 -1.367 -4.95 0 c -1.366 1.367 -1.366 3.583 0 4.95 l 41.5 41.5 c 1.366 1.367 3.583 1.367 4.949 0 l 41.5 -41.5 C 89.658 26.042 90 25.146 90 24.25 z"></path></svg>';
+            }
+        }
+    </script>
+</body>
+</html>

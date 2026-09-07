@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anggie Huang - Data Analyst & Insights Specialist</title>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #f5f5f5;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; text-align: center; }
+        h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+        h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        p { color: var(--text-light); margin-bottom: 1rem; }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+        .nav-menu { display: flex; list-style: none; gap: 2rem; }
+        .nav-link { font-size: 0.95rem; color: var(--text-light); font-weight: 500; text-decoration: none; }
+        .nav-link:hover { color: var(--accent-color); }
+
+        .hero {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-left h1 { color: var(--primary-color); margin-bottom: 0.5rem; }
+        .hero-subtitle { font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; font-style: italic; }
+        .hero-description { font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem; color: var(--text-light); }
+
+        .hero-buttons { display: flex; gap: 1rem; margin-bottom: 2.5rem; }
+        .btn { display: inline-block; padding: 0.75rem 2rem; border-radius: 6px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; font-size: 0.95rem; transition: all 0.3s ease; }
+        .btn-primary { background-color: var(--accent-color); color: #ffffff; }
+        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
+        .btn-secondary { background-color: #ffffff; color: var(--text-dark); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { background-color: var(--secondary-color); }
+
+        .hero-contact { display: flex; flex-direction: column; gap: 1rem; }
+        .contact-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; }
+        .contact-icon { font-size: 1.3rem; }
+        .contact-text { color: var(--text-light); }
+        .contact-link { color: var(--accent-color); font-weight: 500; text-decoration: none; }
+        .contact-link:hover { text-decoration: underline; }
+
+        .looking-for-box {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .looking-for-box h3 { font-size: 0.85rem; color: var(--text-light); font-weight: 600; letter-spacing: 1px; margin-bottom: 1rem; text-transform: uppercase; }
+        .looking-for-title { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1.5rem; }
+        .skill-tags { display: flex; flex-direction: column; gap: 0.75rem; }
+        .tag { display: block; background-color: var(--secondary-color); color: var(--text-dark); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem; border: 1px solid var(--border-color); text-align: left; }
+
+        .about { padding: 8rem 2rem; background-color: #ffffff; }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; max-width: 1200px; margin: 0 auto; }
+        .about-left { max-width: 500px; }
+        .about-intro { font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem; color: var(--text-light); }
+
+        .skills-section { margin-top: 3rem; }
+        .skills-section h3 { font-size: 1rem; margin-bottom: 1.5rem; color: var(--primary-color); }
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+        .skill-badge { background-color: var(--secondary-color); color: var(--text-dark); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500; text-align: center; border: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .skill-badge:hover { background-color: var(--accent-color); color: #ffffff; border-color: var(--accent-color); }
+
+        .achievement-cards { display: flex; flex-direction: column; gap: 1.5rem; }
+        .achievement-card { background-color: #f5f5f5; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-color); transition: all 0.3s ease; }
+        .achievement-card:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); transform: translateY(-2px); }
+        .achievement-card h4 { color: var(--primary-color); margin-bottom: 0.5rem; }
+        .achievement-card p { font-size: 0.85rem; line-height: 1.6; margin: 0; }
+
+        .projects { padding: 8rem 2rem; background-color: #f5f5f5; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .project-card { background-color: #ffffff; padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .project-card:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); transform: translateY(-4px); }
+
+        .project-header { margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+        .project-header h3 { margin: 0; flex: 1; }
+        .project-tag { background-color: #f5f5f5; color: var(--text-light); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.8rem; white-space: nowrap; }
+
+        .project-description { font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .project-impact { display: flex; flex-direction: column; gap: 1rem; }
+        .impact-item { display: flex; flex-direction: column; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+        .impact-label { font-weight: 600; color: var(--text-dark); font-size: 0.9rem; margin-bottom: 0.25rem; }
+        .impact-value { color: var(--text-light); font-size: 0.9rem; }
+
+        .experience { padding: 8rem 2rem; background-color: #ffffff; }
+        .experience-timeline { display: flex; flex-direction: column; gap: 3rem; max-width: 1200px; margin: 0 auto; }
+        .experience-item { background-color: #f5f5f5; padding: 2.5rem; border-radius: 8px; border-left: 4px solid var(--accent-color); }
+
+        .experience-header { margin-bottom: 1.5rem; }
+        .company { display: block; color: var(--accent-color); font-weight: 600; margin-bottom: 0.25rem; }
+        .date { display: block; color: var(--text-light); font-size: 0.9rem; }
+        .experience-description { margin-bottom: 1.5rem; color: var(--text-light); }
+        .experience-highlights { list-style: none; padding-left: 0; }
+        .experience-highlights li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; color: var(--text-light); font-size: 0.95rem; }
+        .experience-highlights li:before { content: "•"; position: absolute; left: 0; color: var(--accent-color); font-weight: 600; }
+
+        .contact { padding: 8rem 2rem; text-align: center; background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%); }
+        .contact-intro { font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; }
+        .contact-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+        .contact-button { display: inline-block; padding: 1rem 1.5rem; background-color: var(--accent-color); color: #ffffff; border-radius: 6px; font-weight: 600; transition: all 0.3s ease; text-decoration: none; }
+        .contact-button:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
+
+        .footer { background-color: var(--primary-color); color: #ffffff; text-align: center; padding: 3rem 2rem; }
+        .footer p { margin: 0; color: #ffffff; }
+
+        @media (max-width: 768px) {
+            .hero-container { grid-template-columns: 1fr; gap: 2rem; }
+            .about-content { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Anggie Huang</div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="hero-tag">DATA STORYTELLER & INSIGHTS ANALYST</div>
+                <h1>Anggie Huang</h1>
+                <p class="hero-subtitle">Placeholder tagline - to be decided</p>
+                
+                <p class="hero-description">
+                    4+ years of experience designing and delivering data products that enable confident decision-making across complex organisations. Skilled in the full data lifecycle — from defining measurement frameworks and establishing data governance standards through to building dashboards and translating insights for C-suite, marketing teams, and operational stakeholders. Experienced in both consultancy and in-house environments. Recent role at a digital marketing consultancy, delivering analytics solutions across insurance, professional services, B2B SaaS, and e-commerce.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">See my work</a>
+                    <a href="#" class="btn btn-secondary">Download CV</a>
+                </div>
+
+                <div class="hero-contact">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-text">anggietw@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <a href="https://www.linkedin.com/in/chienjui-huang/" target="_blank" class="contact-link">LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="looking-for-box">
+                    <h3>I'M LOOKING FOR</h3>
+                    <p class="looking-for-title">Data Analyst Role</p>
+                    <div class="skill-tags">
+                        <span class="tag">Analytics & Insights</span>
+                        <span class="tag">Data Governance</span>
+                        <span class="tag">Measurement Frameworks</span>
+                        <span class="tag">Experimentation & Optimisation</span>
+                        <span class="tag">Dashboard Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-left">
+                <p class="about-intro">
+                    I'm a data analyst passionate about translating business problems into scalable data solutions. My expertise spans the full data lifecycle—from designing measurement frameworks and establishing data governance standards to delivering impactful visualisations and insights used by stakeholders across complex international organisations. I specialise in designing user-centric analytics solutions, collaborating with cross-functional teams, and delivering insights under tight deadlines.
+                </p>
+
+                <div class="skills-section">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-grid">
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">BigQuery</span>
+                        <span class="skill-badge">GA4</span>
+                        <span class="skill-badge">Looker Studio</span>
+                        <span class="skill-badge">Power BI</span>
+                        <span class="skill-badge">A/B Testing</span>
+                        <span class="skill-badge">Statistical Analysis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-right">
+                <div class="achievement-cards">
+                    <div class="achievement-card">
+                        <h4>Content Performance Framework</h4>
+                        <p>Consolidated 6 data sources into a single benchmarked score across 1,000+ assets, enabling non-technical teams to independently track performance.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h4>Automated Anomaly Detection System</h4>
+                        <p>Built real-time anomaly detection in BigQuery to flag bot traffic and data anomalies, eliminating manual QA checks across international markets.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h4>Insights Driving Business Decisions</h4>
+                        <p>Delivered 10+ structured insight reports on user behaviour and digital performance that informed strategic prioritisation decisions across global teams.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h4>Data Governance & Stakeholder Enablement</h4>
+                        <p>Established group-wide data standards and UTM taxonomy, then trained 50+ international stakeholders on self-serve analytics and data-driven decision making.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Anomaly Detection System</h3>
+                        <span class="project-tag">BigQuery · SQL · Statistics</span>
+                    </div>
+                    <p class="project-description">Built an automated real-time anomaly detection system in BigQuery using SQL and statistical confidence intervals to flag bot traffic and data anomalies across international markets.</p>
+                    <div class="project-impact">
+                        <div class="impact-item">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">Eliminated manual QA checks across all markets</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-label">Result:</span>
+                            <span class="impact-value">Protected data integrity upstream of reporting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Content Performance Framework</h3>
+                        <span class="project-tag">GA4 · SemRush · GSC · Looker Studio</span>
+                    </div>
+                    <p class="project-description">Designed a scalable measurement framework consolidating 6 data sources into a single benchmarked score across 1,000+ assets.</p>
+                    <div class="project-impact">
+                        <div class="impact-item">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">Enabled self-serve analytics for non-technical teams</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-label">Result:</span>
+                            <span class="impact-value">Reduced analyst dependency and accelerated decision-making</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>C-Suite Performance Reporting</h3>
+                        <span class="project-tag">BigQuery · Google Sheets · Automation</span>
+                    </div>
+                    <p class="project-description">Owned design and delivery of an automated marketing performance reporting suite for a global professional services client.</p>
+                    <div class="project-impact">
+                        <div class="impact-item">
+                            <span class="impact-label">Impact:</span>
+                            <span class="impact-value">Delivered channel efficiency insights to C-suite</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-label">Result:</span>
+                            <span class="impact-value">Informed global budget allocation decisions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Data Storyteller & Insights Analyst</h3>
+                        <span class="company">Clarity Global, London</span>
+                        <span class="date">Mar 2025 – Present</span>
+                    </div>
+                    <p class="experience-description">Client-facing analytics consultancy delivering data products and insights across professional services, insurance, B2B SaaS, e-commerce, and FMCG sectors.</p>
+                    <ul class="experience-highlights">
+                        <li>Designed automated anomaly detection system in BigQuery protecting data integrity across international markets</li>
+                        <li>Owned performance reporting suite for global professional services client, delivering C-suite insights</li>
+                        <li>Built scalable content performance framework consolidating 6 data sources across 1,000+ assets</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Junior Digital Marketing Analyst</h3>
+                        <span class="company">Howden, London</span>
+                        <span class="date">Oct 2022 – Jan 2025</span>
+                    </div>
+                    <p class="experience-description">In-house analytics resource at group level, serving international stakeholders across a global insurance broker.</p>
+                    <ul class="experience-highlights">
+                        <li>Analysed user behaviour and digital performance using GA4 and FullStory, delivering 10+ structured insight reports</li>
+                        <li>Owned end-to-end A/B and multivariate experimentation lifecycle across global websites using Optimizely</li>
+                        <li>Established group-wide UTM taxonomy and data governance framework, trained 50+ stakeholders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p class="contact-intro">I'm always interested in discussing data-driven insights, analytics challenges, or opportunities to collaborate.</p>
+            <div class="contact-links">
+                <a href="mailto:anggietw@gmail.com" class="contact-button">📧 Email</a>
+                <a href="https://www.linkedin.com/in/chienjui-huang/" target="_blank" class="contact-button">💼 LinkedIn</a>
+                <a href="tel:+447518763007" class="contact-button">📱 Phone</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Anggie Huang. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

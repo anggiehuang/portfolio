@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - About Me Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --warm-white: #FAFAF8;
+            --charcoal: #252525;
+            --sage-mist: #EEF1EC;
+            --muted-sage: #9CAF9B;
+            --deep-sage: #718675;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--warm-white);
+        }
+
+        /* About Me Section */
+        .about {
+            padding: 6rem 2rem;
+            background-color: var(--sage-mist);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            margin-bottom: 3rem;
+        }
+
+        .about-label {
+            font-size: 0.75rem;
+            color: var(--deep-sage);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .about-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-main {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+
+        .technical-skills {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .skills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .skill-badge {
+            background-color: var(--warm-white);
+            color: var(--charcoal);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--muted-sage);
+        }
+
+        .skills-label {
+            font-size: 0.75rem;
+            color: var(--deep-sage);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-right {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Achievement Cards */
+        .achievement-card {
+            background-color: var(--warm-white);
+            border-left: 3px solid var(--deep-sage);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .achievement-card:hover {
+            box-shadow: 0 4px 12px rgba(113, 134, 117, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .card-number {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            font-family: 'Fraunces', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--muted-sage);
+            opacity: 0.5;
+        }
+
+        .achievement-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .achievement-description {
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Skill Tags - Hidden by default */
+        .achievement-skills {
+            display: none;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: auto;
+        }
+
+        .achievement-card:hover .achievement-skills {
+            display: flex;
+        }
+
+        .achievement-skills:not(:empty) {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--sage-mist);
+        }
+
+        .skill-tag {
+            background-color: var(--sage-mist);
+            color: var(--deep-sage);
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                padding: 4rem 2rem;
+            }
+
+            .about-title {
+                font-size: 1.8rem;
+            }
+
+            .about-right {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- About Me Section -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-header">
+                <p class="about-label">About Me</p>
+                <h2 class="about-title">Who I am</h2>
+            </div>
+
+            <div class="about-main">
+                <div class="about-left">
+                    <p class="about-text">
+                        I'm a data analyst passionate about translating business problems into scalable data solutions. I specialise in designing user-centric analytics solutions that guide stakeholders across the full data lifecycle—from defining measurement frameworks and establishing data governance standards to delivering impactful visualisations and insights. I thrive on complex business challenges where the answer isn't obvious, insight loops are tight, and commercial stakes are high.
+                    </p>
+
+                    <div>
+                        <div class="skills-label">Technical Skills</div>
+                        <div class="technical-skills">
+                            <div class="skills-row">
+                                <span class="skill-badge">SQL</span>
+                                <span class="skill-badge">BigQuery</span>
+                                <span class="skill-badge">GA4</span>
+                            </div>
+                            <div class="skills-row">
+                                <span class="skill-badge">Looker Studio</span>
+                                <span class="skill-badge">Power BI</span>
+                            </div>
+                            <div class="skills-row">
+                                <span class="skill-badge">A/B Testing</span>
+                                <span class="skill-badge">Statistical Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-right">
+                    <!-- Card 1 -->
+                    <div class="achievement-card">
+                        <div>
+                            <h3 class="achievement-title">Analytics & Insights</h3>
+                            <p class="achievement-description">Discover opportunities through deep analysis, providing tailored insights that drive strategic and operational decisions.</p>
+                        </div>
+                        <div class="achievement-skills">
+                            <span class="skill-tag">User Behaviour Analysis</span>
+                            <span class="skill-tag">Digital Performance Diagnosis</span>
+                            <span class="skill-tag">Insight Translation</span>
+                        </div>
+                        <span class="card-number">01</span>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="achievement-card">
+                        <div>
+                            <h3 class="achievement-title">Measurement & Experimentation</h3>
+                            <p class="achievement-description">Design measurement strategies and predictive models that inform optimization decisions through A/B testing and statistical analysis.</p>
+                        </div>
+                        <div class="achievement-skills">
+                            <span class="skill-tag">A/B Testing & CRO</span>
+                            <span class="skill-tag">Content Performance Measurement</span>
+                            <span class="skill-tag">Statistical Forecasting</span>
+                        </div>
+                        <span class="card-number">02</span>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="achievement-card">
+                        <div>
+                            <h3 class="achievement-title">Requirements-Driven Solutions</h3>
+                            <p class="achievement-description">Partner with stakeholders to understand their needs, then design and deliver tailored analytics solutions that enable independent action.</p>
+                        </div>
+                        <div class="achievement-skills">
+                            <span class="skill-tag">Discovery Workshops</span>
+                            <span class="skill-tag">Dashboard Architecture</span>
+                            <span class="skill-tag">Self-serve Analytics Design</span>
+                        </div>
+                        <span class="card-number">03</span>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="achievement-card">
+                        <div>
+                            <h3 class="achievement-title">Data Governance & Frameworks</h3>
+                            <p class="achievement-description">Establish standardised data structures and measurement frameworks that create a single source of truth across the organisation.</p>
+                        </div>
+                        <div class="achievement-skills">
+                            <span class="skill-tag">UTM & Naming Conventions</span>
+                            <span class="skill-tag">GA4 & GTM Configuration</span>
+                            <span class="skill-tag">Training & Enablement</span>
+                        </div>
+                        <span class="card-number">04</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
